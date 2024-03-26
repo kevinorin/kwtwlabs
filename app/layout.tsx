@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import { Toaster } from 'react-hot-toast';
 import "./globals.css";
 
@@ -9,9 +10,11 @@ export const metadata: Metadata = {
 
 export default function App() {
   return (
-    <div className="App">
-      <Toaster />
-      {/* Your app content */}
-    </div>
+    <html lang="en">
+      <body className={inter.className}>
+        <Toaster />
+        {children}
+      </body>
+    </html>
   );
 }
