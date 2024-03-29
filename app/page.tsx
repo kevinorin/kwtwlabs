@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import BioSection from '../app/components/bioSection';
 import ProjectsPreview from './components/projectsPreview';
+import SkillsAndInterests from './components/skillInterests';
+import ContributionsSection from './components/contributions';
+import ExcitementSection from './components/excitement';
+import TeachingSection from './components/teaching';
+import OutroSection from './components/outro';
 
 export default function Home() {
   useEffect(() => {
@@ -25,12 +30,26 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Smoother scroll 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <main className="min-h-screen">
       <BioSection />
       <ProjectsPreview />
-
+      <SkillsAndInterests />
+      <ContributionsSection />
+      <ExcitementSection />
+      <TeachingSection />
+      <OutroSection />
       {/* Section tracker */}
       <div className="fixed right-10 top-1/2 transform -translate-y-1/2">
         {Array(4).fill(null).map((_, i) => (
