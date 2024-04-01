@@ -141,8 +141,6 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
             metadataVideoTitle="A description of the content"
             primaryColor="#FFFFFF"
             secondaryColor="#000000"
-            width={width}
-            height={height}
           />
         );
       default:
