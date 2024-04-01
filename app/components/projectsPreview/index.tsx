@@ -3,31 +3,57 @@ import { motion } from "framer-motion";
 import ProjectCard from '../projectCard';
 
 const projects = [
+
   {
-    title: "Project 1",
-    description: "An innovative project that solves complex problems using Tailwind CSS.",
-    imageUrl: "https://via.placeholder.com/150",
+    id: 1,
+    title: "OptumPricer",
+    description: "SaaS platform to help businesses manage their pricing strategies.",
+    imageUrl: "/images/logo-op.png",
+    url: "https://www.optumpricer.com/",
+    status: "Production",
   },
   {
-    title: "Project 2",
-    description: "A creative project showcasing custom animations with Framer Motion.",
-    imageUrl: "https://via.placeholder.com/150",
+    id: 2,
+    title: "NC Waterfalls",
+    description: "Database of North Carolina's many waterfalls.",
+    imageUrl: "/images/logo-ncw.png",
+    url: "https://nc-waterfalls-lilac.vercel.app/",
+    status: "Development",
   },
   {
-    title: "Project 3",
-    description: "A utility-first CSS framework for rapidly building custom designs.",
-    imageUrl: "https://via.placeholder.com/150",
+    id: 3,
+    title: "BGN",
+    description: "News & entertainment platform for blockchain powered media.",
+    imageUrl: "/images/logo-bgn.png",
+    url: "https://bgn.games",
+    status: "Hobby",
   },
-  // Add more projects as needed
+  {
+    id: 4,
+    title: "GEXP",
+    description: "Explorer and platform built on the Galachain ecosystem.",
+    imageUrl: "/images/logo-gexp.png",
+    url: "https://gexp.live",
+    status: "Hobby",
+  },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section className="snap-start min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-primary to-secondary text-black p-5">
-      <h2 className="text-4xl font-bold mb-8">Projects I'm Proud Of</h2>
-      <div className="flex justify-center items-center flex-wrap">
-        {projects.map(project => (
-          <ProjectCard key={project.id} project={project} />
+    <section id="projectsPreview" className="snap-start min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-primary to-secondary text-black p-5 md:p-32 md:pt-10 px-5">
+      <h2 className="text-4xl font-bold mb-8 text-balance">Tailwind in Action</h2>
+      <p className="text-lg mb-8 text-center text-balance">I use Tailwind whenever I can, like on this webpage 😉. Here are more examples.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-32 text-balance">
+        {projects.map((project, index) => (
+          <motion.div 
+            key={project.id} 
+            initial={{ x: index % 2 === 0 ? -200 : 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1.5 }}
+          >
+            <ProjectCard project={project} />
+          </motion.div>
         ))}
       </div>
     </section>

@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import BioSection from '../app/components/bioSection';
 import ProjectsPreview from './components/projectsPreview';
+import SkillsAndInterests from './components/skillInterests';
+import ContributionsSection from './components/contributions';
+import ExcitementSection from './components/excitement';
+import TeachingSection from './components/teaching';
+import OutroSection from './components/outro';
 
 export default function Home() {
   useEffect(() => {
@@ -15,6 +20,16 @@ export default function Home() {
 
   const [currentSection, setCurrentSection] = useState(0);
 
+  const sectionIds = [
+    'bioSection',
+    'skillsAndInterests',
+    'contributionsSection',
+    'projectsPreview',
+    'excitementSection',
+    'teachingSection',
+    'outroSection'
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const section = Math.round(window.scrollY / window.innerHeight);
@@ -25,19 +40,33 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Smoother scroll 
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-300">
       <BioSection />
+      <SkillsAndInterests />
+      <ContributionsSection />
       <ProjectsPreview />
-
+      <ExcitementSection />
+      <TeachingSection />
+      <OutroSection />
       {/* Section tracker */}
-      <div className="fixed right-10 top-1/2 transform -translate-y-1/2">
-        {Array(4).fill(null).map((_, i) => (
+      <div className="fixed right-5 top-1/2 transform -translate-y-1/2">
+        {sectionIds.map((_, i) => (
           <div
             key={i}
-            onClick={() => setCurrentSection(i)}
-            className={`w-4 h-4 mb-2 rounded-full cursor-pointer ${currentSection === i ? 'bg-secondary' : 'bg-white'}`}
+            onClick={() => scrollToSection(i)}
+            className={`w-2 h-6 mb-2 ${currentSection === i ? 'bg-slate-600' : 'bg-slate-300'}`}
           ></div>
         ))}
       </div>
