@@ -65,7 +65,7 @@ export default function BioSection() {
                 <RotatableElement
                   hoverType="video"
                   hoverContent="PtQpfV864g2mDy6m00CuywH4or8wem76mMVmz99bUeEs"
-                  staticText="I'm a polymath. I love to learn and drawing is one of my natural talents."
+                  staticText="I'm a polymath. I love to learn and drawing is a natural talent."
                   width={320}
                   height={180}
                 />
@@ -89,7 +89,6 @@ interface RotatableElementProps {
   width: number;
   height: number;
 }
-
 function RotatableElement({ hoverType, hoverContent, staticText, width, height }: RotatableElementProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -105,22 +104,27 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
     rotateY: 0,
     opacity: 1,
     transition: { duration: 0.5 },
-    position: 'relative',
-    backfaceVisibility: 'hidden',
   };
 
   const backStyle = {
     rotateY: 180,
     opacity: 0,
     transition: { duration: 0.5 },
+  };
+
+  const staticStyles = {
+    position: 'relative',
+    backfaceVisibility: 'hidden',
+  };
+
+  const absoluteStyles = {
     position: 'absolute',
     backfaceVisibility: 'hidden',
   };
 
   const containerStyle = {
-    perspective: 1000, // Children will be positioned in a 3D-space
+    perspective: 1000, 
   };
-
 
   const renderContent = () => {
     switch (hoverType) {
@@ -154,18 +158,20 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
       <motion.div
         onClick={handleMainClick}
         animate={isFlipped ? backStyle : frontStyle}
-        className="relative flex flex-col items-center rounded-md shadow-md p-5 my-5 text-wrap hover:cursor-pointer bg-slate-800 text-white"
+        style={isFlipped ? absoluteStyles : staticStyles} // Apply CSS styles based on flip state
+        className="flex flex-col items-center rounded-md shadow-md p-5 my-5 text-wrap hover:cursor-pointer bg-slate-800 text-white"
       >
         {staticText}
       </motion.div>
       <motion.div
         onClick={handleMainClick}
         animate={isFlipped ? frontStyle : backStyle}
-        className="relative flex flex-col items-center rounded-md shadow-md p-4 py-1 my-5 text-wrap hover:cursor-pointer"
+        style={isFlipped ? staticStyles : absoluteStyles} // Swap styles based on flip state
+        className="flex flex-col items-center rounded-md shadow-md p-4 py-1 my-5 text-wrap hover:cursor-pointer"
       >
         {renderContent()}
         <button onClick={handleCloseClick} className="absolute top-0 right-0 p-2">
-        <span className="material-symbols-outlined text-red-500 mr-1">cancel</span>
+          <span className="material-symbols-outlined text-red-500 mr-1">cancel</span>
         </button>
       </motion.div>
     </div>
