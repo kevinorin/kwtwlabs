@@ -10,7 +10,7 @@ export default function BioSection() {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <section id="bioSection" className="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-b from-transparent via-orange-200 to-cyan-300/90 backdrop-blur-md text-black w-full mx-auto">
+    <section id="bioSection" className="flex flex-col justify-center items-center bg-gradient-to-b from-transparent via-orange-200 to-fuchsia-300/90 backdrop-blur-md text-black w-full mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -59,14 +59,14 @@ export default function BioSection() {
                 <RotatableElement
                   hoverType="image"
                   hoverContent="https://image.mux.com/w5S318v00o9lSmy8mY1UNT7dXoyKCZ2ABHIB01VggVHBs/animated.gif?width=320"
-                  staticText="I love to eat and grow food. #Permaculture"
+                  staticText="I love to grow food and teach others about #Permaculture."
                   width={320}
                   height={180}
                 />
                 <RotatableElement
                   hoverType="video"
                   hoverContent="PtQpfV864g2mDy6m00CuywH4or8wem76mMVmz99bUeEs"
-                  staticText="I consider myself an autodidact and an artist."
+                  staticText="I'm a polymath. I love to learn and drawing is a natural talents."
                   width={320}
                   height={180}
                 />
