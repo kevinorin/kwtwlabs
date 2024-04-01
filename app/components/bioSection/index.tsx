@@ -83,7 +83,15 @@ export default function BioSection() {
   );
 }
 
-function RotatableElement({ hoverType, hoverContent, staticText, width, height }) {
+interface RotatableElementProps {
+  hoverType: 'image' | 'video';
+  hoverContent: string;
+  staticText: string;
+  width: number;
+  height: number;
+}
+
+function RotatableElement({ hoverType, hoverContent, staticText, width, height }: RotatableElementProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleCloseClick = () => {

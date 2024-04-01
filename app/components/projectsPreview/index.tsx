@@ -1,6 +1,7 @@
 // components/ProjectsSection.js or components/ProjectsSection.tsx
 import { motion } from "framer-motion";
 import ProjectCard from '../projectCard';
+import Link from "next/link";
 
 const projects = [
 
@@ -35,6 +36,26 @@ const projects = [
     imageUrl: "/images/logo-gexp.png",
     url: "https://gexp.live",
     status: "Hobby",
+  },
+  {
+    id: 5,
+    title: "B&B",
+    description: "A bed and breakfast concept using WordPress Headless CMS (Rest API) and Next.js.",
+    imageUrl: "/images/logo-bb.png",
+    url: "https://airbb-wordpress-next.vercel.app/",
+    status: "Demo",
+  },
+  {
+    id: 6,
+    title: "Kevin W., Design Engineer",
+    description: (
+      <>
+        <Link href="https://www.figma.com/file/siRxh5UFE29ZIm7PkHjfxa/Untitled?type=design&node-id=1%3A569&mode=design&t=IsgJs2AYZU283ZmC-1" target="blank" className="text-blue-600">Brand, moodboard concept, color pallette</Link> and development for Tailwind Lab&rsquo;s.
+      </>
+    ),
+    imageUrl: "/images/logo-kwtw.png",
+    url: "https://airbb-wordpress-next.vercel.app/",
+    status: "Demo",
   },
 ];
 

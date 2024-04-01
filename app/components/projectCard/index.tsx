@@ -5,6 +5,7 @@ const ProjectCard = ({ project }) => {
     Development: "bg-cyan-600",
     Production: "bg-emerald-500",
     Hobby: "bg-fuchsia-600/90",
+    Demo: "bg-orange-600/90",
   };
   return (
     <motion.div
