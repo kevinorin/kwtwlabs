@@ -7,10 +7,9 @@ export default function BioSection() {
   const [showFullBio, setShowFullBio] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const toggleBio = () => setShowFullBio(!showFullBio);
-  const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <section id="bioSection" className="flex flex-col justify-center items-center bg-gradient-to-b from-transparent via-orange-200 to-fuchsia-300/90 backdrop-blur-md text-black w-full mx-auto">
+    <section id="bioSection" className="flex flex-col min-h-screen pb-40 justify-center items-center bg-gradient-to-b from-transparent via-orange-200 to-fuchsia-300/90 backdrop-blur-md text-black w-full mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -66,7 +65,7 @@ export default function BioSection() {
                 <RotatableElement
                   hoverType="video"
                   hoverContent="PtQpfV864g2mDy6m00CuywH4or8wem76mMVmz99bUeEs"
-                  staticText="I'm a polymath. I love to learn and drawing is a natural talents."
+                  staticText="I'm a polymath. I love to learn and drawing is one of my natural talents."
                   width={320}
                   height={180}
                 />
@@ -97,8 +96,9 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
   const handleCloseClick = () => {
     setIsFlipped(false);
   };
+
   const handleMainClick = () => {
-    if (!isFlipped) setIsFlipped(true);
+    setIsFlipped(!isFlipped);
   };
 
   const frontStyle = {
@@ -117,14 +117,10 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
     backfaceVisibility: 'hidden',
   };
 
-  const staticStyle = {
-    position: 'relative',
-    backfaceVisibility: 'hidden',
-  };
-
   const containerStyle = {
     perspective: 1000, // Children will be positioned in a 3D-space
   };
+
 
   const renderContent = () => {
     switch (hoverType) {
