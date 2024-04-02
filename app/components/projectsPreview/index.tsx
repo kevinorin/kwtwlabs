@@ -1,6 +1,7 @@
 // components/ProjectsSection.js or components/ProjectsSection.tsx
 import { motion } from "framer-motion";
 import ProjectCard from '../projectCard';
+import { Project } from "../projectCard";
 import Link from "next/link";
 
 const projects = [
@@ -73,10 +74,12 @@ export default function ProjectsSection() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 1.5 }}
           >
-            <ProjectCard project={project} />
+            <ProjectCard project={project as Project} />
           </motion.div>
         ))}
       </div>
     </section>
   );
 }
+
+

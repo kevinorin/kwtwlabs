@@ -1,6 +1,15 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-const ProjectCard = ({ project }) => {
+export interface Project {
+  title: string;
+  url: string;
+  status: 'Development' | 'Production' | 'Hobby' | 'Demo';
+  description: string;
+  imageUrl?: string;
+}
+
+const ProjectCard = ({ project }: { project: Project }) => {
   const statusColors = {
     Development: "bg-cyan-600",
     Production: "bg-emerald-500",
@@ -22,7 +31,7 @@ const ProjectCard = ({ project }) => {
       </div>
       <p>{project.description}</p>
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">
-        {project.imageUrl && <img src={project.imageUrl} alt={project.title} className="mt-2 rounded max-w-32 md:max-w-24 bg-white shadow-md shadow-slate-300 p-2" />}
+        {project.imageUrl && <Image src={project.imageUrl} alt={project.title} className="mt-2 rounded max-w-32 md:max-w-24 bg-white shadow-md shadow-slate-300 p-2" />}
       </a>
     </motion.div>
   );

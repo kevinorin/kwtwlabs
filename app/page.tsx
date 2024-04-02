@@ -9,6 +9,19 @@ import ExcitementSection from './components/excitement';
 import TeachingSection from './components/teaching';
 import OutroSection from './components/outro';
 
+type SectionId = 'bioSection' | 'skillsAndInterests' | 'contributionsSection' | 'projectsPreview' | 'excitementSection' | 'teachingSection' | 'outroSection';
+
+const sectionIds: SectionId[] = [
+  'bioSection',
+  'skillsAndInterests',
+  'contributionsSection',
+  'projectsPreview',
+  'excitementSection',
+  'teachingSection',
+  'outroSection'
+];
+
+
 export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -41,7 +54,7 @@ export default function Home() {
   }, []);
 
   // Smoother scroll 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       window.scrollTo({
@@ -62,10 +75,10 @@ export default function Home() {
       <OutroSection />
       {/* Section tracker */}
       <div className="fixed right-5 top-1/2 transform -translate-y-1/2">
-        {sectionIds.map((_, i) => (
+        {sectionIds.map((sectionId, i) => (
           <div
             key={i}
-            onClick={() => scrollToSection(i)}
+            onClick={() => scrollToSection(sectionId)} // Pass sectionId here
             className={`w-2 h-6 mb-2 ${currentSection === i ? 'bg-slate-600' : 'bg-slate-300'}`}
           ></div>
         ))}
