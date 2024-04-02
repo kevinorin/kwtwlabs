@@ -30,7 +30,7 @@ const ContributionsSection = () => {
   const [width, setWidth] = useState(0);
   const controls = useAnimation();
 
-  const startAnimation = (newWidth) => {
+  const startAnimation = (newWidth: number) => {
     controls.start({
       x: [`0px`, `-${newWidth}px`, `0px`, `${newWidth}px`],
       transition: {
@@ -64,9 +64,6 @@ const ContributionsSection = () => {
       <motion.div
         className="flex"
         animate={controls}
-        initial={{
-          x: [`0px`, `-${width}px`, `0px`, `${width}px`],
-        }}
         transition={{
           duration: 10,
           ease: "linear",
