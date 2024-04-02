@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { CSSProperties, useState } from 'react';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import MuxPlayer from '@mux/mux-player-react';
@@ -30,7 +30,7 @@ export default function BioSection() {
           />
         </div>
         <div className="max-w-2xl mx-auto text-balance">
-          <p className='font-semibold text-slate-900'>From Georgetown, Guyana to the USA, my journey in web development has evolved from curious beginnings on my first PC to a passionate professional specializing in UI/UX engineering. My life, enriched by family and friends, learning, cooking, traveling, growing, mirrors the diverse and rich experiences I aim to create digitally.</p>
+          <p className='font-semibold text-slate-900'>My journey in design and development has evolved from curious beginnings on my first PC to a passionate professional specializing in UI/UX engineering. My life, enriched by family and friends, learning, cooking, traveling, growing and all the things&emdash;mirrors the diverse and rich experiences I aim to create digitally.</p>
           {showFullBio && (
             <motion.p
               initial={{ opacity: 0 }}
@@ -39,7 +39,7 @@ export default function BioSection() {
               className="mt-4 rounded-md bg-slate-100 p-5 shadow-md"
             >
               <p className="py-3">I&rsquo;m driven by curiosity, a knack for finding solutions to problems, and a passion for creating better digital experiences. Consulting and working with various clients and teams has not only steered me toward my preferred stack—JamStack React/Next, APIs and Tailwind CSS—but has also equipped me with a versatile set of skills, including brand design, SEO, video editing, and hosting with MUX.</p>
-              <p className="py-3">A coveted position at Tailwind Labs requires not just the appropriate skills but also a fitting personality for the team. I&rsquol;m dedicated to perpetual learning and skill enhancement, aiming to be a constructive and uplifting team player.</p>
+              <p className="py-3">A coveted position at Tailwind Labs requires not just the appropriate skills but also a fitting personality for the team. I&rsquo;m dedicated to perpetual learning and skill enhancement, aiming to be a constructive and uplifting team player.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <RotatableElement
                   hoverType="video"
@@ -112,18 +112,18 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
     transition: { duration: 0.5 },
   };
 
-  const staticStyles = {
+  const staticStyles: CSSProperties = {
     position: 'relative',
     backfaceVisibility: 'hidden',
   };
 
-  const absoluteStyles = {
+  const absoluteStyles: CSSProperties = {
     position: 'absolute',
     backfaceVisibility: 'hidden',
   };
 
-  const containerStyle = {
-    perspective: 1000, 
+  const containerStyle: CSSProperties = {
+    perspective: 1000,
   };
 
   const renderContent = () => {
