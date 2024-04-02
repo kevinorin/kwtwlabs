@@ -1,24 +1,31 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { FaGithub, FaStackOverflow, FaSeedling } from 'react-icons/fa';
+import { FaGithub, FaStackOverflow, FaSeedling, FaSync } from 'react-icons/fa';
 
 const contributions = [
   {
     id: 1,
+    title: 'Dojo + Tailwind',
+    description: 'I\'m currently experimenting on a mini-project that combines the Dojo Toolkit with Tailwind CSS. The public repo will appear in my GitHub sometime soon-ish.',
+    link: 'https://github.com/kevinorin',
+    icon: <FaSync className="text-4xl mb-4" />,
+  },
+  {
+    id: 2,
     title: 'GitHub',
     description: 'Mostly private repos but I\'ve made it a goal to increase my contributions to Open Source projects and add more demos.',
     link: 'https://github.com/kevinorin',
     icon: <FaGithub className="text-4xl mb-4" />,
   },
   {
-    id: 2,
+    id: 3,
     title: '457k People Reached on Stack Overflow',
     description: 'I surf the Stack Exchange network and contribute to problem solving when I can.',
     link: 'https://stackoverflow.com/users/875390/devkev?tab=profile',
     icon: <FaStackOverflow className="text-4xl mb-4" />,
   },
   {
-    id: 3,
+    id: 4,
     title: 'Supporting Meliponario Bees',
     description: 'I contribute to the preservation and repopulation of Meliponario bees through this non-profit.',
     link: 'https://mayanmeliponabee.org/',
