@@ -9,7 +9,7 @@ export default function BioSection() {
   const toggleBio = () => setShowFullBio(!showFullBio);
 
   return (
-    <section id="bioSection" className="flex flex-col min-h-screen pb-40 justify-center items-center bg-gradient-to-b from-transparent via-orange-200 to-fuchsia-300/90 backdrop-blur-md text-black w-full mx-auto">
+    <section id="bioSection" className="flex flex-col min-h-screen pb-40 justify-center items-center bg-gradient-to-b from-transparent via-slate-400/40 to-slate-300/40 backdrop-blur-md text-black w-full mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -73,7 +73,7 @@ export default function BioSection() {
             </motion.p>
             
           )}
-          <button onClick={toggleBio} className="mt-4 hover:cursor-pointer text-blue-600 underline">
+          <button onClick={toggleBio} className="mt-4 hover:cursor-pointer text-blue-600 underline font-semibold">
             {showFullBio ? 'Less about me' : 'More about me . . .'}
           </button>
         </div>

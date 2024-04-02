@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
       <p>{project.description}</p>
       <a href={project.url} target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">
-        {project.imageUrl && <Image src={project.imageUrl} alt={project.title} className="mt-2 rounded max-w-32 md:max-w-24 bg-white shadow-md shadow-slate-300 p-2" />}
+        {project.imageUrl && <Image src={project.imageUrl} alt={project.title} width={200} height={250} className="mt-2 rounded max-w-32 md:max-w-24 bg-white shadow-md shadow-slate-300 p-2" />}
       </a>
     </motion.div>
   );

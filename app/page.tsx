@@ -79,7 +79,7 @@ export default function Home() {
           <div
             key={i}
             onClick={() => scrollToSection(sectionId)} // Pass sectionId here
-            className={`w-2 h-6 mb-2 ${currentSection === i ? 'bg-slate-600' : 'bg-slate-300'}`}
+            className={`w-2 h-6 mb-2 hover:cursor-pointer hover:bg-fuchsia-800 ${currentSection === i ? 'bg-fuchsia-800' : 'bg-slate-400'}`}
           ></div>
         ))}
       </div>
