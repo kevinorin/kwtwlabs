@@ -30,7 +30,7 @@ export default function BioSection() {
           />
         </div>
         <div className="max-w-2xl mx-auto text-balance">
-          <p className='font-semibold text-slate-900'>My journey in design and development has evolved from curious beginnings on my first PC to a passionate professional specializing in UI/UX engineering. My life, enriched by family and friends, learning, cooking, traveling, growing and all the things&emdash;mirrors the diverse and rich experiences I aim to create digitally.</p>
+          <p className='font-semibold text-slate-900'>My journey in design and development has evolved from curious beginnings on my first PC to a passionate professional specializing in UI/UX engineering. My life, enriched by family and friends, learning, cooking, traveling, growing and all the things&mdash;mirrors the diverse and rich experiences I aim to create digitally.</p>
           {showFullBio && (
             <motion.p
               initial={{ opacity: 0 }}
