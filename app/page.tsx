@@ -25,7 +25,7 @@ const sectionIds: SectionId[] = [
 export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
-      toast('I\'m creeping on you 👀, I\'ve been notified that Tailwind Labs opened my application link :)');
+      toast('This is a work in progress, currently best viewed on desktop.');
     }, 20000); // Delays the toast notification
 
     return () => clearTimeout(timer); // Cleanup the timer
