@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   };
   return (
     <motion.div
-      className="w-full h-40 bg-white p-5 rounded-lg shadow-lg m-4"
+      className="h-40 bg-white p-5 rounded-lg shadow-lg m-4"
       whileHover={{ scale: 1.1 }} 
     >
       <div className="flex items-center justify-between mb-4">
