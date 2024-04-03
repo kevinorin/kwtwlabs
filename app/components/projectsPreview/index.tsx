@@ -62,7 +62,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projectsPreview" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-primary to-secondary text-black p-5 md:p-32 md:pt-10 px-5">
+    <section id="projectsPreview" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-primary to-secondary text-black p-5 sm:p-32 px-5">
       <h2 className="text-4xl font-bold mb-8 text-balance">Tailwind in Action</h2>
       <p className="text-lg mb-8 text-center text-balance">I use Tailwind whenever I can, like on this webpage 😉. Here are more examples.</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-32 text-balance">

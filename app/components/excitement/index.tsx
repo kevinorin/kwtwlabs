@@ -20,7 +20,7 @@ const ExcitementSection = () => {
   ];  
 
   return (
-    <section id="excitementSection" className="@container min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr from-accent to-primary text-black p-5">
+    <section id="excitementSection" className="@container min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr from-accent to-primary text-black p-5 md:p-32 px-5">
       <h2 className="text-4xl font-bold mb-8">What I&rsquo;m Excited About</h2>
       
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">

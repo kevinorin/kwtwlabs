@@ -73,7 +73,7 @@ export default function BioSection() {
             </motion.p>
             
           )}
-          <button onClick={toggleBio} className="mt-4 hover:cursor-pointer text-blue-600 underline font-semibold">
+          <button onClick={toggleBio} className="mt-4 hover:cursor-pointer bg-slate-600 px-5 py-1 text-white rounded-full font-semibold hover:bg-slate-800">
             {showFullBio ? 'Less about me' : 'More about me . . .'}
           </button>
         </div>
