@@ -7,7 +7,3 @@ html {
 section {
   scroll-snap-align: start;
 }
-
-section {
-  @apply pr-14 md:pr-0
-}

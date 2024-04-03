@@ -78,7 +78,7 @@ export default function Home() {
         {sectionIds.map((sectionId, i) => (
           <div
             key={i}
-            onClick={() => scrollToSection(sectionId)} // Pass sectionId here
+            onClick={() => scrollToSection(sectionId)} 
             className={`w-2 h-6 mb-2 rounded-md backdrop-blur-md hover:cursor-pointer hover:bg-fuchsia-800/80 ${currentSection === i ? 'bg-fuchsia-800/80' : 'bg-slate-400/80'}`}
           ></div>
         ))}
