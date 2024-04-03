@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const TeachingSection = () => {
   return (
-    <section id="teachingSection" className="snap-start min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-secondary to-primary text-black p-5">
+    <section id="teachingSection" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tl from-secondary to-primary text-black p-5">
       <h2 className="text-4xl font-bold mb-8">Teaching Ability</h2>
       <motion.div
         initial={{ opacity: 0, y: 50 }}

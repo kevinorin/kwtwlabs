@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const OutroSection = () => {
   return (
-    <section id="outroSection" className="snap-end min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-primary to-secondary text-black p-5 max-w-4xl mx-auto">
+    <section id="outroSection" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-primary to-secondary text-black p-5 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

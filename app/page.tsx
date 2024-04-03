@@ -26,9 +26,9 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       toast('This is a work in progress, currently best viewed on desktop.');
-    }, 20000); // Delays the toast notification
+    }, 20000); 
 
-    return () => clearTimeout(timer); // Cleanup the timer
+    return () => clearTimeout(timer); 
   }, []);
 
   const [currentSection, setCurrentSection] = useState(0);
@@ -79,7 +79,7 @@ export default function Home() {
           <div
             key={i}
             onClick={() => scrollToSection(sectionId)} // Pass sectionId here
-            className={`w-2 h-6 mb-2 hover:cursor-pointer hover:bg-fuchsia-800 ${currentSection === i ? 'bg-fuchsia-800' : 'bg-slate-400'}`}
+            className={`w-2 h-6 mb-2 rounded-md backdrop-blur-md hover:cursor-pointer hover:bg-fuchsia-800/80 ${currentSection === i ? 'bg-fuchsia-800/80' : 'bg-slate-400/80'}`}
           ></div>
         ))}
       </div>

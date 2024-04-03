@@ -34,66 +34,49 @@ const contributions = [
 ];
 
 const ContributionsSection = () => {
-  const [width, setWidth] = useState(0);
-  const controls = useAnimation();
-
-  const startAnimation = (newWidth: number) => {
-    controls.start({
-      x: [`0px`, `-${newWidth}px`, `0px`, `${newWidth}px`],
+  const cardVariants = {
+    offscreen: {
+      y: 50,
+      opacity: 0,
+      scale: 0.95,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
       transition: {
-        duration: 10,
-        ease: "linear",
-        repeat: Infinity,
-        repeatType: "reverse",
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
       },
-    });
+    },
   };
 
-  useEffect(() => {
-    const updateWidthAndAnimate = () => {
-      const container = document.getElementById('sliderContainer');
-      if (container) {
-        const newWidth = container.scrollWidth - container.offsetWidth;
-        setWidth(newWidth);
-        startAnimation(newWidth); // Use the function to start/restart the animation
-      }
-    };
-
-    window.addEventListener('resize', updateWidthAndAnimate);
-    updateWidthAndAnimate(); // Trigger animation on mount
-    return () => window.removeEventListener('resize', updateWidthAndAnimate);
-  }, [controls]);
-
   return (
-    <section id="contributionsSection" className="snap-start min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-light to-secondary text-gray-800 p-5">
+    <section id="contributionsSection" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-light to-secondary text-gray-800 p-5">
       <h2 className="text-4xl font-bold mb-8">Contributions</h2>
-      <div id="sliderContainer" className="w-full max-w-5xl overflow-hidden">
-      <motion.div
-        className="flex"
-        animate={controls}
-        transition={{
-          duration: 10,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        onHoverStart={() => controls.stop()}
-        onHoverEnd={() => startAnimation(width)} // Use the animation function on hover end as well
-      >
-          {contributions.map((contribution) => (
-            <div key={contribution.id} className="bg-white p-6 rounded-lg shadow-lg min-w-[300px] m-4">
-              {contribution.icon}
-              <h3 className="text-2xl font-semibold mb-2">
-                <a href={contribution.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {contribution.title}
-                </a>
-              </h3>
-              <p>{contribution.description}</p>
-            </div>
-          ))}
-        </motion.div>
+      <div className="w-full max-w-5xl overflow-hidden">
+        {contributions.map((contribution) => (
+          <motion.div
+            key={contribution.id}
+            className="bg-white p-6 rounded-lg shadow-lg min-w-[300px] m-4"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }} // Adjust 'amount' as needed to control when the animation triggers
+            variants={cardVariants}
+          >
+            {contribution.icon}
+            <h3 className="text-2xl font-semibold mb-2">
+              <a href={contribution.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                {contribution.title}
+              </a>
+            </h3>
+            <p>{contribution.description}</p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
 };
+
 export default ContributionsSection;

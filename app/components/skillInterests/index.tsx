@@ -41,7 +41,7 @@ const SkillsAndInterests = () => {
   ];
 
   return (
-    <section id="skillsAndInterests" className="@container snap-start min-h-screen flex flex-col justify-center items-center text-black p-5">
+    <section id="skillsAndInterests" className="@container min-h-screen flex flex-col justify-center items-center text-black p-5">
       <h2 className="text-4xl font-bold mt-14 md:mb-8">Skills & Interests</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <motion.div
