@@ -164,14 +164,13 @@ function RotatableElement({ hoverType, hoverContent, staticText, width, height }
         {staticText}
       </motion.div>
       <motion.div
-        onClick={handleMainClick}
         animate={isFlipped ? frontStyle : backStyle}
         style={isFlipped ? staticStyles : absoluteStyles} // Swap styles based on flip state
-        className="flex flex-col items-center rounded-md shadow-md p-4 py-1 my-5 text-wrap hover:cursor-pointer"
+        className="flex flex-col items-center rounded-md shadow-md p-4 py-1 my-5 text-wrap"
       >
         {renderContent()}
-        <button onClick={handleCloseClick} className="absolute top-0 right-0 p-2">
-          <span className="material-symbols-outlined text-red-500 mr-1">cancel</span>
+        <button onClick={handleCloseClick} className="absolute top-0 right-0 p-2 hover:cursor-pointer group">
+          <span className="material-symbols-outlined text-red-800 mr-1 group-hover:text-red-500">cancel</span>
         </button>
       </motion.div>
     </div>
