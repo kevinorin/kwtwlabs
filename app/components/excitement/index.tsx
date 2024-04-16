@@ -32,7 +32,7 @@ const ExcitementSection = () => {
           className="bg-white text-gray-800 p-6 rounded-lg shadow-xl first:sm:col-span-3 flex items-center justify-between"
           >
             <div>
-              <h3 className="text-2xl font-semibold mb-2">Joining your Agency</h3>
+              <h3 className="text-2xl font-semibold mb-2">Joining your team</h3>
               <p>Thriving in environments where innovation meets purpose, I find development more thrilling when there&rsquo;s a deep passion for the work being done. I&rsquo;m eager to find a company where I can settle in, grow roots, and contribute to meaningful projects. </p>
             </div>
             <div className="relative hidden @xl:flex mx-auto z-20 mb-7">
