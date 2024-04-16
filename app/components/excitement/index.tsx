@@ -32,8 +32,8 @@ const ExcitementSection = () => {
           className="bg-white text-gray-800 p-6 rounded-lg shadow-xl first:sm:col-span-3 flex items-center justify-between"
           >
             <div>
-              <h3 className="text-2xl font-semibold mb-2">Joining Tailwind Labs</h3>
-              <p>Development is more thrilling when theirs a passion for the work being done. There aren&rsquo;t enough words to describe how grateful I would be to work at Tailwind Labs . . . so I created this webpage. Working with the team at the forefront my favorite tools/stack would be a dream.🤞🏽</p>
+              <h3 className="text-2xl font-semibold mb-2">Joining a Agency for Life</h3>
+              <p>Development is more thrilling when theirs a passion for the work being done. There aren&rsquo;t enough words to describe how grateful I would be to work for a company worth giving my all to . . . so I created this webpage.</p>
             </div>
             <div className="relative hidden @xl:flex mx-auto z-20 mb-7">
               <iframe

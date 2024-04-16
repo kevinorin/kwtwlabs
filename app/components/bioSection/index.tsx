@@ -39,7 +39,7 @@ export default function BioSection() {
               className="mt-4 rounded-md bg-slate-100 p-5 shadow-md"
             >
               <p className="py-3">I&rsquo;m driven by curiosity, a knack for finding solutions to problems, and a passion for creating better digital experiences. Consulting and working with various clients and teams has not only steered me toward my preferred stack—JamStack React/Next, APIs and Tailwind CSS—but has also equipped me with a versatile set of skills, including brand design, SEO, video editing, and hosting with MUX.</p>
-              <p className="py-3">A coveted position at Tailwind Labs requires not just the appropriate skills but also a fitting personality for the team. I&rsquo;m dedicated to perpetual learning and skill enhancement, aiming to be a constructive and uplifting team player.</p>
+              <p className="py-3">A position at any agency requires not just the appropriate skills but also a fitting personality for the team. I&rsquo;m dedicated to perpetual learning and skill enhancement, aiming to be a constructive and uplifting team player.</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <RotatableElement
                   hoverType="video"
