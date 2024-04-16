@@ -32,8 +32,8 @@ const ExcitementSection = () => {
           className="bg-white text-gray-800 p-6 rounded-lg shadow-xl first:sm:col-span-3 flex items-center justify-between"
           >
             <div>
-              <h3 className="text-2xl font-semibold mb-2">Joining a Agency for Life</h3>
-              <p>Development is more thrilling when theirs a passion for the work being done. There aren&rsquo;t enough words to describe how grateful I would be to work for a company worth giving my all to . . . so I created this webpage.</p>
+              <h3 className="text-2xl font-semibold mb-2">Joining your Agency</h3>
+              <p>Thriving in environments where innovation meets purpose, I find development more thrilling when there&rsquo;s a deep passion for the work being done. I&rsquo;m eager to find a company where I can settle in, grow roots, and contribute to meaningful projects. </p>
             </div>
             <div className="relative hidden @xl:flex mx-auto z-20 mb-7">
               <iframe
